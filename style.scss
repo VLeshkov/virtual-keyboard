@@ -1,0 +1,96 @@
+body {
+  background-color: beige;
+}
+
+.container {
+  margin: 150px auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap:5px;
+}
+
+.keyboard__row {
+  display: flex;
+  gap: 5px;
+  flex-wrap: nowrap;
+}
+
+.key {
+
+  flex-grow: 0;
+  padding: 0.8em 1.2em;
+  border-radius: 5px;
+  max-width: initial;
+
+  background-color: #3A424E;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.2rem;
+  color: #FFF;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+  transition: 0.5s;
+  
+  overflow: hidden;
+
+  .circle {
+    position: absolute;
+    z-index: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    border-radius: 100%;
+    background-color: aquamarine;
+    animation-name: circle-anim;
+    animation-duration: 0.3s;
+  }
+}
+
+.key_large {
+  flex-grow: 1;
+}
+
+#leftShift {
+  max-width: 70px;
+}
+
+.key_dark {
+  background-color: #242424;
+  color: #808080;
+}
+
+.key:hover {
+  background-color: rgb(142, 209, 187);
+}
+
+.key.active {
+  background-color: aquamarine;
+}
+
+@keyframes circle-anim {
+  from {
+    width: 1px;
+    height: 1px;
+    opacity: 1;
+  }
+  to {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+  }
+}
